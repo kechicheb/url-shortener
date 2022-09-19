@@ -26,19 +26,17 @@ async function shortenUrl(url) {
     const data = await res.json();
     const newUrl = document.createElement("div");
     newUrl.innerHTML = `<p> ${url}</p> <p> ${data.result.short_link}</p>
-   <button class="newUrl-btn btn" >Copy</button>
+   <button class="newUrl-btn btn" onclick="copyUrl(this)">Copy</button>
    `;
     divResult.prepend(newUrl);
-    const copyBtns = divResult.querySelectorAll(".newUrl-btn");
-    copyBtns.forEach((e) => {
-      e.onclick = (e) => {
-        console.log(e.previousElementSibling);
-        // console.log(ele.previousElementSibling.textContent);
-        // navigator.clipboard.writeText(ele.previousElementSibling.textContent);
-      };
-    });
+
     input.value = "";
   } catch (err) {
     console.log(err);
   }
 }
+function copyUrl(clickedBtn) {
+ 
+  navigator.clipboard.writeText(clickedBtn.previousElementSibling.textContent);
+}
+

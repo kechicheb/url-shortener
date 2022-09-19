@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap");
+
+:root {
+  --cyan: hsl(180, 66%, 49%);
+  --dark-violet: hsl(257, 27%, 26%);
+  --red: hsl(0, 87%, 67%);
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
+}
+
+/* Start Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.btn {
+  cursor: pointer;
+  background-color: var(--cyan);
+  color: white;
+  padding: 10px 30px;
+  display: block;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 786px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin-inline: auto;
+  font-size: 18px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+}
+/* End Global Rules */
+.shorten .container {
+  display: flex;
+  flex-direction: column;
+}
+.shorten .container .input-container {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-violet);
+  width: 80%;
+  margin-inline: auto;
+  padding: 40px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.shorten .container .input-container::before {
+  content: "";
+  z-index: -1;
+  background-size: cover;
+  background-image: url(images/bg-shorten-desktop.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.shorten .container .input-container > :where(input, button) {
+  outline: none;
+  translate: 0 18px;
+  font-size: 18px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.shorten .container .input-container input {
+  flex: 1;
+  padding: 10px;
+}
+
+.shorten .container .input-container input.danger {
+  border-color: var(--red);
+}
+.shorten .container .input-container p {
+  flex: 1;
+  flex-basis: 100%;
+  color: var(--red);
+  visibility: hidden;
+  translate: 0 18px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.shorten .container .input-container p.danger {
+  visibility: visible;
+}
+.shorten .container .result div{
+  width: 80%;
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.shorten .container .result div p {
+  flex: 1;
+}
+.shorten .container .result div p:last-of-type {
+text-align: end;
+color: var(--cyan);
+}

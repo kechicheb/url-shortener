@@ -5,18 +5,20 @@ const selectElement = (selector) => {
 };
 const form = selectElement("form");
 const input = selectElement("input");
-const dangerP = selectElement(".shorten .container .input-container p");
-let divResult = selectElement(".shorten .container .result");
+const pError = selectElement(".shorten .container .input-container .error");
+const divResult = selectElement(".shorten .container .result");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const url = input.value;
 
   if (url == "") {
     input.classList.add("danger");
-    dangerP.classList.add("danger");
+    pError.classList.add("danger");
+    pError.innerHTML = "please enter link";
   } else {
     input.classList.remove("danger");
-    dangerP.classList.remove("danger");
+    pError.classList.remove("danger");
     shortenUrl(url);
   }
 });
@@ -33,10 +35,11 @@ async function shortenUrl(url) {
     input.value = "";
   } catch (err) {
     console.log(err);
+    input.classList.add("danger");
+    pError.classList.add("danger");
+    pError.innerHTML = "please enter a valid link";
   }
 }
 function copyUrl(clickedBtn) {
- 
   navigator.clipboard.writeText(clickedBtn.previousElementSibling.textContent);
 }
-

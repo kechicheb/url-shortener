@@ -146,7 +146,7 @@ body {
 
 .shorten .container .input-container input {
   flex: 1;
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
 }
 
 .shorten .container .input-container input.danger {
@@ -167,12 +167,14 @@ body {
 .shorten .container .input-container p.danger {
   visibility: visible;
 }
-.shorten .container .result div{
+.shorten .container .result {
   width: 80%;
   margin-top: 20px;
+  margin-inline: auto;
+}
+.shorten .container .result div {
   background-color: white;
   padding: 20px;
-  margin-inline: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,8 +187,10 @@ body {
 }
 .shorten .container .result div p {
   flex: 1;
+  color: var(--very-dark-violet);
 }
 .shorten .container .result div p:last-of-type {
-text-align: end;
-color: var(--cyan);
+  text-align: end;
+  color: var(--cyan);
 }
+

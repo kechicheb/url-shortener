@@ -7,7 +7,12 @@ const form = selectElement("form");
 const input = selectElement("input");
 const pError = selectElement(".shorten .container .input-container .error");
 const divResult = selectElement(".shorten .container .result");
-
+const links = selectElement(".links");
+const menu = selectElement(".menu-icon");
+menu.onclick = function () {
+  menu.classList.toggle("active");
+  links.classList.toggle("active");
+};
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const url = input.value;

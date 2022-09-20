@@ -108,11 +108,11 @@ body {
   align-items: center;
   column-gap: 30px;
   row-gap: 5px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .shorten .container .input-container::before {
   content: "";
@@ -176,11 +176,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .shorten .container .result div:not(:first-child) {
   margin-top: 20px;
@@ -193,7 +193,9 @@ body {
   text-align: end;
   color: var(--cyan);
 }
-
+.shorten .container .result .btn.active {
+  background-color: var(--very-dark-blue);
+}
 @media (max-width: 787px) {
   .shorten .container .input-container,
   .shorten .container .result {

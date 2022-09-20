@@ -41,5 +41,12 @@ async function shortenUrl(url) {
   }
 }
 function copyUrl(clickedBtn) {
+  let copyBtns = document.querySelectorAll(".newUrl-btn");
+  copyBtns.forEach((e) => {
+    e.classList.remove("active");
+    e.innerHTML = "Copy";
+  });
+  clickedBtn.classList.add("active");
+  clickedBtn.innerHTML = "Copied!";
   navigator.clipboard.writeText(clickedBtn.previousElementSibling.textContent);
 }

@@ -3,16 +3,29 @@ const selectElement = (selector) => {
   if (element) return element;
   throw new Error(`Cannot find the element ${selector}`);
 };
+const header = selectElement("header");
 const form = selectElement("form");
 const input = selectElement("input");
 const pError = selectElement(".shorten .container .input-container .error");
 const divResult = selectElement(".shorten .container .result");
 const links = selectElement(".links");
 const menu = selectElement(".menu-icon");
+// Menu
 menu.onclick = function () {
   menu.classList.toggle("active");
   links.classList.toggle("active");
 };
+
+// Header
+window.onscroll = () => {
+  if (window.scrollY > 86) {
+    header.classList.add("shadow");
+  } else {
+    header.classList.remove("shadow");
+  }
+};
+
+// Form test url
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const url = input.value;
@@ -27,6 +40,8 @@ form.addEventListener("submit", (e) => {
     shortenUrl(url);
   }
 });
+
+// Shortener Url use Api
 async function shortenUrl(url) {
   try {
     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
@@ -45,6 +60,8 @@ async function shortenUrl(url) {
     pError.innerHTML = "please enter a valid link";
   }
 }
+
+// Btn Copy Url
 function copyUrl(clickedBtn) {
   let copyBtns = document.querySelectorAll(".newUrl-btn");
   copyBtns.forEach((e) => {

@@ -192,6 +192,9 @@ header .container .links ul li a.btn {
     width: 100%;
     z-index: 999;
   }
+  header.shadow {
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.25);
+  }
   header .container {
     justify-content: space-between;
   }

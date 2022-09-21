@@ -95,7 +95,6 @@ header .container {
   padding-block: 20px;
   align-items: center;
   gap: 25px;
-  position: relative;
 }
 header .container .logo img {
   width: 100%;

@@ -89,14 +89,13 @@ body {
 /* End Global Rules */
 
 /* Start Header */
-header {
-  position: relative;
-}
+
 header .container {
   display: flex;
   padding-block: 20px;
   align-items: center;
   gap: 25px;
+  position: relative;
 }
 header .container .logo img {
   width: 100%;
@@ -187,6 +186,12 @@ header .container .links ul li a.btn {
 }
 
 @media (max-width: 767px) {
+  header {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999;
+  }
   header .container {
     justify-content: space-between;
   }
@@ -194,10 +199,10 @@ header .container .links ul li a.btn {
     display: flex;
   }
   header .container .links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 86px;
+    z-index: 999;
     left: 120%;
-    display: none;
     flex-direction: column;
     justify-content: center;
     width: calc(100% - 30px);
@@ -216,7 +221,6 @@ header .container .links ul li a.btn {
   }
   header .container .links.active {
     left: 15px;
-    display: flex;
   }
   header .container .links ul {
     flex-direction: column;

@@ -136,11 +136,6 @@ header .container .links ul li a.btn {
   width: 38px;
   height: 20px;
   display: none;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
 }
 .menu-icon span {
   position: absolute;
